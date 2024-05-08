@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Random;
@@ -57,5 +58,81 @@ public class MyHashTable<K, V>{
 }
 public V get (K key){
     int index = hash(key);
-    HashNode< K, V> curre
+    HashNode< K, V> currentNode = chainArray[index];
+    while (currentNode != null{
+   if(currentNode.key.equals(key)){
+    return currentNode.value;
+    }
+    currentNode= currentNode.next;
+}
+    return null; // key not found
+}
+    public V remove(K key){
+    int index = hash(key);
+    HashNode<K, V> currentNode =chainArray[index];
+    HashNode<K, V>prevNode = null;
+    while(currentNode != null;{
+if(currentNode.key.equals(key)){
+if(prevNode == null){
+    chainArray[index] = currentNode.next;
+}
+else{
+prevNode.next= currentNode.next;
+}
+size__;
+return currentNode.value;
+}
+return null; // key not found
+}
+
+
+public boolean contains(V value){
+    for(HashNode<K, V>node: chainArray){
+    HashNode<K,V>currentNode= node;
+    while (currentNode != null){
+        if(currentNode.value.equals(value)){
+        return ture;
+}
+    currentNode = currentNode.next;
+}
+}
+    return false; // Valuse Not found
+}
+
+
+
+
+
+
+public void printBucketSizes(){
+    for(int i= 0; i< M; i++){
+    int count = 0;
+    HashNode<K, V> currentNode = chainArray[i];
+    while(currentNode != null){
+    count++;
+    currentNode = currentNode.next;
+}
+        System.out.println("Bucket" + i + " : " + count + " elements");
+}
+}
+
+
+
+
+
+
+
+public static void main(String[] args){
+    MyHashTable,MyTestingClass,String>table = new MyHashTable<>();
+    Random random = new Random();
+
+// Add random 10000 elements to the hash table
+    for(int i= 0; i<10000; i++){
+    MyTestingClas key = newMyTestingClass(random.next(100));
+    table.put(key,"Value:" + i);
+    }
+
+    // Print number of elements in each bucket
+    table.printBucketSize();
+}
 }
