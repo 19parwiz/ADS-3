@@ -3,12 +3,15 @@ import java.util.NoSuchElementException;
 
 
 
- // BST class implements a binary search tree with methods for putting, getting, and deleting nodes.
- //It also includes an iterator for in-order traversal.
+//      BST class implements a binary search tree with methods for putting, getting, and deleting nodes.
+ //   It also includes an iterator for in-order traversal.
 
 public class BST<K extends Comparable<K>, V> implements Iterable<K> {
     private class Node {
+
         private K key;
+
+
         private V value;
         private Node left, right;
 

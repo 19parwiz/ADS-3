@@ -103,7 +103,7 @@ public class MyHashTable<K, V> {
                 count++;
                 currentNode = currentNode.next;
             }
-            System.out.println("Bucket " + i + " : " + count + " elements");
+            System.out.println(" Buckets  " + i + " : " + count + " elementss");
         }
     }
 
